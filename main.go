@@ -94,7 +94,7 @@ func main() {
 		}
 		fmt.Printf("%v", q)
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Hello from loadtest application."))
+		w.Write([]byte("Hello from example application. Try '/image.jpg' for more fun...\n"))
 	})
 
 	fileHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
