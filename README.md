@@ -9,7 +9,7 @@ A computer with `Minishift`, `git` & `oc` installed
 
 1) Build a docker container from the Dockerfile, run the container, make a curl request (expose ports).
 
-2) Save the image to a tar.gz (`docker save <image> -o example.tar.gz`)
+2) Save the image to a tar.gz (`docker export <container> -o example.tar.gz`)
 
 3) Start minishift, create a new project named: `example`
 
