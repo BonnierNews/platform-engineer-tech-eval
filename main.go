@@ -28,12 +28,12 @@ var (
 
 func init() {
 	httpRequestsResponseTime = prometheus.NewSummary(prometheus.SummaryOpts{
-		Namespace: "latencytest",
+		Namespace: "example",
 		Name:      "response_time_seconds",
 		Help:      "Request response times",
 	})
 	version = prometheus.NewGauge(prometheus.GaugeOpts{
-		Namespace: "latencytest",
+		Namespace: "example",
 		Name:      "version",
 		Help:      "Version information about this binary",
 		ConstLabels: map[string]string{
@@ -41,13 +41,13 @@ func init() {
 		},
 	})
 	httpRequestsTotal = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Namespace: "latencytest",
+		Namespace: "example",
 		Name:      "requests_total",
 		Help:      "Count of all HTTP requests",
 	}, []string{"code", "method"})
 
 	httpSizesTotal = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Namespace: "latencytest",
+		Namespace: "example",
 		Name:      "size_by_path_total",
 		Help:      "Count of size sent by path",
 	}, []string{"path", "method"})
