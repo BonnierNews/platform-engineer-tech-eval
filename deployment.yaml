@@ -30,9 +30,23 @@ items:
         - image: 172.30.1.1:5000/example/example:latest
           imagePullPolicy: Always
           name: example
+          command:
+            - /usr/bin/main
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8181
+            initialDelaySeconds: 3
+            periodSeconds: 3
+        readinessProbe:
+          tcpSocket:
+            port: 8181
+          initialDelaySeconds: 2
+          periodSeconds: 10
           ports:
           - containerPort: 8080
             protocol: TCP
+            name: http
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
